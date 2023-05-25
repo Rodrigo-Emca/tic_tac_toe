@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <Board />
+      <Board squares={squares}/>
     </div>
   );
 }
