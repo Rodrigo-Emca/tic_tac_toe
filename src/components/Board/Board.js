@@ -1,17 +1,18 @@
 import Square from "../Square/Square"
+import './board.css'
 
 const Board = ({squares}) => {
 
     const createSquares = values => (
-        values.map( value => {
+        values.map( value => (
             <Square 
                 value={squares[value]}
                 key={`square_${value}`}
                 />
-        })
+        ))
     )
 
-    return(
+    return (
         <div className="board">
             <div className="row">
                 {createSquares([0,1,2])}
