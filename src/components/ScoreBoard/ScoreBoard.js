@@ -1,6 +1,5 @@
-import './scoreBoard.css';
-
 import React from 'react'
+import './scoreBoard.css';
 
 export default function ScoreBoard({scoreX, scoreO}) {
     return (
