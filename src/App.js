@@ -2,6 +2,17 @@ import { useState } from 'react';
 import './App.css';
 import Board from './components/Board/Board';
 
+const winningPositions = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6],
+]
+
 const App = () => {
 
   const [turn, setTurn] = useState('X');
@@ -11,7 +22,7 @@ const App = () => {
     O: 0,
   })
 
-  const checkForWinner = squares => {
+  const checkForWinner = newSquares => {
     setTurn(turn === 'X' ? 'O': 'X')
   }
 
