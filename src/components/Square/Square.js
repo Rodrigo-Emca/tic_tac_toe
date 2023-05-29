@@ -1,8 +1,13 @@
 import './square.css'
 
-const Square = ({value}) => {
+const Square = ({value, onClick, turn}) => {
+
+    const handleClick = () => {
+        (turn !== null && value === null) && onClick();
+    }
+
     return (
-        <div className="square">
+        <div className="square" onClick={() => handleClick()}>
 
         </div>
     )

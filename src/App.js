@@ -25,7 +25,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <Board squares={squares}/>
+      <Board turn={turn} squares={squares} onClick={handleClick}/>
     </div>
   );
 }
