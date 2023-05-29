@@ -16,8 +16,9 @@ const winningPositions = [
 const App = () => {
 
   const [turn, setTurn] = useState('X');
-  const [squares, setSquares] = useState(Array(9).fill(null))
-  const [scrore, setScore] = useState({
+  const [squares, setSquares] = useState(Array(9).fill(null));
+  const [winningSquares, setWinningSquares] = useState([]);
+  const [score, setScore] = useState({
     x: 0,
     O: 0,
   })
@@ -43,6 +44,13 @@ const App = () => {
 
   const endGame = (result, winningPositions) => {
     setTurn(null); //bloquamos los clicks del usuario
+    if(result !== null) {
+      setScore({
+        ...score,
+        [result]: score[result] + 1
+      })
+    }
+    setWinningSquares(winningPositions);
 
   }
 
@@ -50,7 +58,6 @@ const App = () => {
     let newSquares = [...squares];
     newSquares.splice(square, 1, turn);
     setSquares(newSquares);
-
     checkForWinner(newSquares);
   }
 
