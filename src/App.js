@@ -4,15 +4,23 @@ import Board from './components/Board/Board';
 
 const App = () => {
 
-  const [turn, setTurn] = useState('x');
+  const [turn, setTurn] = useState('X');
   const [squares, setSquares] = useState(Array(9).fill(null))
   const [scrore, setScore] = useState({
     x: 0,
     O: 0,
   })
 
+  const checkForWinner = squares => {
+    setTurn(turn === 'X' ? 'O': 'X')
+  }
+
   const handleClick = square => {
-    let newSquare = [...squares];
+    let newSquares = [...squares];
+    newSquares.splice(square, 1, turn);
+    setSquares(newSquares);
+
+    checkForWinner(newSquares);
   }
 
   return (
