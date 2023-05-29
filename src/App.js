@@ -11,6 +11,10 @@ const App = () => {
     O: 0,
   })
 
+  const handleClick = square => {
+    let newSquare = [...squares];
+  }
+
   return (
     <div className="container">
       <Board squares={squares}/>
